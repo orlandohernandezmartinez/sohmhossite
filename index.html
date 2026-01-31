@@ -296,6 +296,68 @@ html{
   }
 }
 
+/* ===== AGENDA SLIDE ===== */
+.slide--agenda{
+  display: flex;
+  align-items: center;
+}
+
+.agenda-header{
+  display:flex;
+  justify-content:space-between;
+  align-items:flex-end;
+  margin-bottom:24px;
+  font-size:var(--h3);
+  font-weight:600;
+}
+
+.agenda{
+  border-top:1px solid #000;
+}
+
+.agenda .row{
+  display:grid;
+  grid-template-columns: 140px 260px 1fr 220px;
+  gap:24px;
+  padding:18px 0;
+  border-bottom:1px solid #000;
+  font-size:var(--p);
+  line-height:1.35;
+}
+
+.agenda .time{
+  font-weight:600;
+}
+
+.agenda .title{
+  font-weight:600;
+}
+
+.agenda .desc{
+  opacity:0.9;
+}
+
+.agenda .who{
+  text-align:left;
+  opacity:0.9;
+}
+
+.agenda .desc,
+.agenda .who{
+  font-size: calc(var(--p) * 0.85);
+}
+
+/* Responsive */
+@media (max-width: 900px){
+  .agenda .row{
+    grid-template-columns: 1fr;
+    gap:8px;
+  }
+  .agenda .time{
+    font-weight:700;
+  }
+}
+
 /* ================= ACCESSIBILITY ================= */
 @media (prefers-reduced-motion: reduce){
   .track{ animation:none }
@@ -358,8 +420,88 @@ html{
           <a class="cta" href="#open-call">Registro</a>
         </div>
       </section>
+
+      <!-- SLIDE 2 / AGENDA -->
+       
+      <section class="slide slide--agenda" id="agenda">
+        <div class="wrap">
+          <h2>Agenda</h2>
+          <div class="agenda-header">
+            <div class="agenda-day">Sábado 14</div>
+            <div class="agenda-label">Día 1</div>
+          </div>
+      
+          <div class="agenda">
+      
+            <div class="row">
+              <div class="time">16:00 – 17:00</div>
+              <div class="title">Apertura & Check-in</div>
+              <div class="desc">
+                Check-in con IRL + Monii App<br>
+                Primer contacto con Touchpoints IRL
+              </div>
+              <div class="who">Priscila</div>
+            </div>
+      
+            <div class="row">
+              <div class="time">17:00 – 17:30</div>
+              <div class="title">Opening Talk</div>
+              <div class="desc">¿Qué es SOHMHOS + MetanoIA?</div>
+              <div class="who">Priscila<br>Orlando</div>
+            </div>
+      
+            <div class="row">
+              <div class="time">17:00 – 20:30</div>
+              <div class="title">Sesiones de MetanoIA + Galería Viva</div>
+              <div class="desc"></div>
+              <div class="who">
+                Artista 1 – Monterrey<br>
+                Artista 2 – CDMX<br>
+                Artista 3 – Oaxaca<br>
+                Artista 4 – Chiapas
+              </div>
+            </div>
+      
+            <div class="row">
+              <div class="time">18:30 – 20:00</div>
+              <div class="title">Warm-up Set<br>Música & Visuals</div>
+              <div class="desc">
+                VJ usando material generado en tiempo real<br>
+                / piezas digitales del line up
+              </div>
+              <div class="who">DJ 1 (Local / Monterrey)</div>
+            </div>
+      
+            <div class="row">
+              <div class="time">20:00 – 21:00</div>
+              <div class="title">Live Act</div>
+              <div class="desc">“Soundscapes for Metano.ia”</div>
+              <div class="who">Sound Designer</div>
+            </div>
+      
+            <div class="row">
+              <div class="time">20:00 – 23:30</div>
+              <div class="title">Club Mode</div>
+              <div class="desc">DJ Lineup Principal</div>
+              <div class="who">
+                DJ 1 (invitado web3)<br>
+                DJ 2 (colectivo local)<br>
+                DJ 3 (headliner local)
+              </div>
+            </div>
+      
+            <div class="row">
+              <div class="time">23:30 – 02:00</div>
+              <div class="title">Closing & Late MetanoIA</div>
+              <div class="desc"></div>
+              <div class="who">DJ 4 (closing downtempo)</div>
+            </div>
+      
+          </div>
+        </div>
+      </section>
     
-      <!-- SLIDE 2 / OPEN CALL -->
+      <!-- SLIDE 3 / OPEN CALL -->
       <section class="slide slide--open-call" id="open-call">
         <header class="hero">
           <div class="open-call" aria-hidden="true">
