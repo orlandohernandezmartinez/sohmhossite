@@ -103,6 +103,66 @@ body.is-loading #app{ opacity:0; }
   text-decoration-thickness: 2px;
 }
 
+/* ================= WAITLIST ================= */
+.waitlist-form{
+  position:relative;
+  width:100%;
+  max-width:480px;
+  margin-top:6px;
+}
+
+#waitlist-input{
+  width:100%;
+  font-family:inherit;
+  font-size:var(--p);
+  background:transparent;
+  border:none;
+  border-bottom:1px solid var(--fg);
+  padding:6px 32px 6px 0; /* espacio para la flecha */
+  outline:none;
+}
+
+#waitlist-input::placeholder{
+  color:#333;
+  opacity:0.55;
+}
+
+/* Flecha: oculta por defecto */
+#waitlist-submit{
+  position:absolute;
+  right:0;
+  top:50%;
+  transform:translateY(-50%);
+  background:none;
+  border:none;
+  font-family:inherit;
+  font-size:var(--p);
+  font-weight:400;
+  cursor:pointer;
+
+  opacity:0;
+  pointer-events:none;
+  transition: opacity 120ms linear, font-weight 120ms linear, transform 120ms linear;
+}
+
+/* Flecha visible cuando hay texto (placeholder ya no está “shown”) */
+#waitlist-input:not(:placeholder-shown) + #waitlist-submit{
+  opacity:1;
+  pointer-events:auto;
+}
+
+#waitlist-submit:hover{
+  font-weight:700;
+  transform:translateY(-50%) scale(1.08);
+}
+
+#waitlist-message{
+  margin-top:8px;
+  font-size:calc(var(--p) - 5px);
+  font-weight:700;
+  font-style:italic;
+}
+
 /* ================= OPEN CALL (STATIC HERO) ================= */
 .hero{ padding-top:1px; }
 
