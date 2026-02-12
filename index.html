@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Sohmhos x MetanoIA (Art/Tech)</title>
+  <title>Sohmhos / MetanoIA (Art+Tech)</title>
 
   <!-- IBM Plex Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -12,6 +12,7 @@
 
   <link rel="stylesheet" href="styles.css">
   <script src="preloader.js" defer></script>
+  <script src="waitlist.js" defer></script>
 </head>
 
 <body class="is-loading">
@@ -27,25 +28,26 @@
 
   <!-- APP / LANDING -->
   <div id="app">
+
     <!-- SLIDE 1 / PORTADA -->
-    <section class="slide slide--intro" id="top">
-      <div class="wrap">
-        <h2>SOHMHOS x metanoIA (IRL)</h2>
-        <div class="subline">Arte + Tecnología</div>
+<section class="slide slide--intro" id="top">
+  <div class="wrap">
+    <h2>SOHMHOS x metanoIA (IRL)</h2>
+    <div class="subline">Arte + Tecnología</div>
 
-        <div class="section-label">ohm/aum/om</div>
-        <p>1. Unidad de resistencia eléctrica (Ω)</p>
-        <p>2. Expresión acústica anterior al significado semántico,
-          cuya comprensión no es intelectual sino experiencial (ॐ)</p>
+    <div class="section-label">ohm/aum/om</div>
+    <p>1. Unidad de resistencia eléctrica (Ω)</p>
+    <p>2. Expresión acústica anterior al significado semántico,
+      cuya comprensión no es intelectual sino experiencial (ॐ)</p>
 
-        <div class="section-label">μετάνοια</div>
-        <p>meta- (μετά): después, cambio, más allá</p>
-        <p>nous (νοũς): mente, espíritu, pensamiento, compresión</p>
+    <div class="section-label">μετάνοια</div>
+    <p>meta- (μετά): después, cambio, más allá</p>
+    <p>nous (νοũς): mente, espíritu, pensamiento, compresión</p>
 
-        <div class="section-label">FECHA</div>
-        <p>15 de marzo, 2026.</p>
+    <div class="section-label">FECHA</div>
+    <p>15 de marzo, 2026.</p>
 
-        <div class="section-label">UBICACIÓN</div>
+    <div class="section-label">UBICACIÓN</div>
         <p>
           <a class="location-link"
              href="https://maps.app.goo.gl/4CUG5gTzc4Qq5C2A8"
@@ -56,17 +58,31 @@
           </a>
         </p>
 
-        <!-- Registro dentro del home -->
-        <a class="cta" href="#apply">Registro</a>
-      </div>
-    </section>
+    <div class="section-label">WAITLIST</div>
 
-    <!-- SLIDE 2 / AGENDA -->
+    <form class="waitlist-form" id="waitlist-form" novalidate>
+      <input
+        type="email"
+        id="waitlist-input"
+        name="email"
+        placeholder="Email"
+        autocomplete="email"
+        required
+      />
+      <button type="submit" id="waitlist-submit" aria-label="Enviar">→</button>
+    </form>
+    
+    <div id="waitlist-message" aria-live="polite"></div>
+  </div>
+</section>
+
+<!-- SLIDE 2 / AGENDA -->
+
     <section class="slide slide--agenda" id="agenda">
       <div class="wrap">
         <h2>Agenda</h2>
         <div class="agenda-header">
-          <div class="agenda-day">Domingo 15</div>
+          <div class="agenda-day">Sábado 14</div>
           <div class="agenda-label"></div>
         </div>
 
