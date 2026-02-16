@@ -85,16 +85,15 @@ body.is-loading #app{ opacity:0; }
   transform: scale(1);
 }
 
-/* ================= NAVBAR (TOP RIGHT) ================= */
+/* ================= NAVBAR ================= */
 .navbar{
   position: fixed;
   top: 16px;
   right: 18px;
   z-index: 20;
-
   display: flex;
-  align-items: center;
   gap: 55px;
+  align-items: center;
 }
 
 .nav-link{
@@ -110,10 +109,72 @@ body.is-loading #app{ opacity:0; }
   text-decoration-thickness: 2px;
 }
 
-/* opcional: si Gallery está “disabled” */
-.nav-link[aria-disabled="true"]{
-  opacity: .45;
-  pointer-events: none;
+.nav-link[aria-current="page"]{
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  text-decoration-thickness: 2px;
+}
+
+/* ================= GALLERY ================= */
+#gallery-stage{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+/* Imágenes flotantes */
+.float-img{
+  position: fixed;            /* rebota vs viewport */
+  left: 0;
+  top: 0;
+  width: min(320px, 38vw);
+  height: auto;
+  border: 1px solid #000;
+  user-select: none;
+  -webkit-user-drag: none;
+  cursor: pointer;
+  will-change: transform;
+}
+
+/* Para variar tamaños si quieres */
+.float-img:nth-child(2){ width: min(290px, 34vw); }
+.float-img:nth-child(3){ width: min(360px, 42vw); }
+.float-img:nth-child(4){ width: min(300px, 36vw); }
+
+/* ================= LIGHTBOX ================= */
+.lightbox{
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.96);
+  display: none;
+  z-index: 50;
+  place-items: center;
+  padding: 24px;
+}
+
+.lightbox.is-open{
+  display: grid;
+}
+
+.lightbox-img{
+  max-width: min(1200px, 92vw);
+  max-height: 90vh;
+  border: 1px solid #000;
+}
+
+.lightbox-close{
+  position: fixed;
+  top: 16px;
+  left: 18px;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 700;
+  cursor: pointer;
+  line-height: 1;
 }
 
 /* ================= WAITLIST ================= */
@@ -409,4 +470,95 @@ html{ scroll-behavior: smooth; }
 @media (max-width:640px){
   .wrap{ padding:24px 0 60px; }
   p, li{ max-width:100%; }
+}
+
+/* ================= MOBILE HAMBURGER MENU ================= */
+
+/* Wrap to allow hamburger positioning */
+.site-nav{
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  z-index: 30;
+}
+
+/* Desktop navbar stays as you already have */
+.site-nav .navbar{
+  display: flex;
+  gap: 55px;
+  align-items: center;
+}
+
+/* Hamburger hidden on desktop */
+.hamburger{
+  display: none;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 28px;     /* matches your mock */
+  line-height: 1;
+  cursor: pointer;
+  padding: 0;
+}
+
+/* Overlay menu */
+.mobile-menu{
+  position: fixed;
+  inset: 0;
+  background: #fff;
+  z-index: 60;
+  display: none;
+}
+
+.mobile-menu.is-open{
+  display: block;
+}
+
+.mobile-menu__close{
+  position: fixed;
+  top: 16px;
+  right: 18px;
+  border: 0;
+  background: transparent;
+  font-family: inherit;
+  font-weight: 700;
+  font-size: 40px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+/* Centered vertical list */
+.mobile-menu__nav{
+  height: 100vh;
+  display: grid;
+  align-content: center; /* vertical center */
+  justify-items: center; /* horizontal center */
+  gap: 48px;             /* spacing between items */
+}
+
+/* Links */
+.mobile-link{
+  font-family: inherit;
+  font-size: 20px;
+  font-weight: 700;
+  text-decoration: none;
+  color: inherit;
+}
+
+/* underline current page */
+.mobile-link[aria-current="page"]{
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+/* Mobile breakpoint: hide desktop nav, show hamburger */
+@media (max-width: 768px){
+  .site-nav .navbar{
+    display: none;
+  }
+  .hamburger{
+    display: inline-block;
+  }
 }
