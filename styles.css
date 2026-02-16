@@ -85,22 +85,35 @@ body.is-loading #app{ opacity:0; }
   transform: scale(1);
 }
 
-/* ================= NAV LINK (TOP RIGHT) ================= */
-.corner-link{
+/* ================= NAVBAR (TOP RIGHT) ================= */
+.navbar{
   position: fixed;
   top: 16px;
   right: 18px;
-  z-index: 10;
+  z-index: 20;
+
+  display: flex;
+  align-items: center;
+  gap: 55px;
+}
+
+.nav-link{
   font-weight: 700;
   font-size: 18px;
   color: inherit;
   text-decoration: none;
 }
 
-.corner-link:hover{
+.nav-link:hover{
   text-decoration: underline;
   text-underline-offset: 4px;
   text-decoration-thickness: 2px;
+}
+
+/* opcional: si Gallery está “disabled” */
+.nav-link[aria-disabled="true"]{
+  opacity: .45;
+  pointer-events: none;
 }
 
 /* ================= WAITLIST ================= */
