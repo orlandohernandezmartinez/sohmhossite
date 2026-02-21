@@ -562,3 +562,37 @@ html{ scroll-behavior: smooth; }
     display: inline-block;
   }
 }
+
+
+/* PDF page layout */
+.pdf-page{
+  height: 100vh;
+  padding-top: 72px; /* tu altura de nav */
+}
+
+.pdf-frame{
+  width: 100%;
+  height: calc(100vh - 72px);
+  border: 0;
+  display: block;
+}
+
+/* Botón visible en mobile para abrir PDF “bien” */
+.pdf-actions{
+  display: none;
+  padding: 12px 18px;
+}
+
+.pdf-open{
+  font-weight: 700;
+  font-size: 18px;
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* En móvil: muestra botón y opcionalmente oculta el iframe */
+@media (max-width: 768px){
+  .pdf-actions{ display: block; }
+  .pdf-frame{ display: none; }  /* recomendado en iOS */
+}
