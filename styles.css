@@ -655,3 +655,37 @@ html{
     max-width:100%;
   }
 }
+
+/* Ajuste específico para Diablito */
+.partners img.partner-diablito{
+  max-width: 140px; /* ~20px menos que los demás */
+}
+
+/* Mobile: logos abajo como footer */
+@media (max-width: 900px){
+  .partners{
+    position: static;
+    width: 100%;
+    height: auto;
+    padding: 32px 24px 48px;
+    display: block;
+  }
+
+  .partners-inner{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 24px 32px;
+  }
+
+  .partners img{
+    max-width: 110px;
+    width: auto;
+    height: auto;
+  }
+
+  .partners img.partner-diablito{
+    max-width: 90px;
+  }
+}
